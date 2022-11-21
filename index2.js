@@ -14,13 +14,29 @@ class Product{
     }
 }
 
-const product0 = new Product(0, "Rollo de arranque", 360, 10);
+const product0 = new Product(0, `Rollo de arranque`, 290, 10);
 const product1 = new Product(1, "Bulto de camisetas", 290, 20);
 const product2 = new Product(2, "Bolsas de consorcio", 500, 100);
 
 
-const productos = [product0, product1, product2];
 
+const productos = [product0, product1, product2];
+/*COMIENZA METODO DE FILTRADO*/ 
+let valorBuscado = 290
+
+const resultdebusqueda = productos.filter(productos => productos.precio === valorBuscado)
+console.log(resultdebusqueda)
+
+if (resultdebusqueda.length === 0) {
+    console.log(`no existe`);
+}else{
+    console.log(`existe`)
+}
+/*TERMINA METODO DE FILTRADO*/
+/*COMIENZA METODO DE BUSQUEDA */
+const buscar = productos.find( elemento => elemento.nombre === `Rollo de arranque`)
+console.log(buscar)
+/*TERMINA METODO DE BUSQUEDA */
 const carrito = []
 
 let productDispo = "Estos son los productos disponibles: "
